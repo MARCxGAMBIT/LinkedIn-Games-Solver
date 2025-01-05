@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Games Helper",
+  "name": "LinkedIn Games Solver",
   "version": "1.0",
-  "description": "Helper extension for LinkedIn Queens and Tango games",
+  "description": "Extension to automatically solve LinkedIn games Queens and Tango",
   "permissions": [
     "activeTab",
     "scripting"
@@ -13,8 +13,8 @@
   "content_scripts": [
     {
       "matches": ["https://*.linkedin.com/*"],
-      "js": ["content.js"],
-      "css": ["content.css"]
+      "js": ["src/content.js"],
+      "css": ["src/content.css"]
     }
   ],
 
@@ -23,8 +23,8 @@
      "resources": ["src/*"]
    }],
   "icons": {
-    "16": "images/icon16.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
   }
 }

@@ -1,0 +1,20 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build directories
+dist/
+build/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Chrome Extension specific
+*.pem
+*.zip
