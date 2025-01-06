@@ -28,7 +28,6 @@ export async function run() {
 
     solve(grid);
     await apply(grid);
-    alert("solved");
 }
 
 function canQueenBePlaced(grid, row, col) {
