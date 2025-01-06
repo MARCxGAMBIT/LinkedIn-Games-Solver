@@ -91,18 +91,18 @@ function solve(grid, constraints, cell = 0) {
 }
 
 function canCellBePlaced(grid, row, col, constraints) {
-    const rowCells = grid[row].map(cell => cell.type);
-    const colCells = grid.map(row => row[col].type);
-
-    if (col > 1 && rowCells.slice(col - 2, col + 1).every((type, _, list) => type === list[0])) {
-        return false;
-    }
-
-    if (row > 1 && colCells.slice(row - 2, row + 1).every((type, _, list) => type === list[0])) {
-        return false;
-    }
-
+    const rowCells = grid[row].map(cell => cell.type ?? "x");
+    const colCells = grid.map(row => row[col].type ?? "x");
     const type = grid[row][col].type;
+
+    if (rowCells.join("").includes(type.repeat(3))) {
+        return false;
+    }
+
+    if (colCells.join("").includes(type.repeat(3))) {
+        return false;
+    }
+
     if (rowCells.filter(cell => cell === type).length > 3) {
         return false;
     }
