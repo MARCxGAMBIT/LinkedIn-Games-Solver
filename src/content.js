@@ -1,5 +1,5 @@
 (() => {
-    let supportedGames = ["queens", "tango", "mini-sudoku"];
+    let supportedGames = ["queens", "tango", "mini-sudoku", "zip"];
 
     init();
 
