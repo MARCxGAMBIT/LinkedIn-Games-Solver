@@ -31,12 +31,13 @@ async function convertDOMInfo() {
             type: !locked ? undefined : cell.children[0].children[0].children[0].isEqualNode(cellTypes.a) ? "a" : "b",
         };
 
-        for (let i = 1; i < cell.children.length; i++) {
-            const constraintCell = cell.children[i];
+        const constraintCells = cell.querySelectorAll(".lotka-cell-edge");
+
+        constraintCells.forEach(constraintCell => {
             const condition = constraintCell.children[0].getAttribute("aria-label");
             const toCoords = constraintCell.className.includes("down") ? [row + 1, col] : [row, col + 1];
             (constraints[toCoords] ??= []).push({ condition, row, col });
-        }
+        });
     });
 
     return { grid, constraints };

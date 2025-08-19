@@ -12,7 +12,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://*.linkedin.com/*"],
+      "matches": ["https://*.linkedin.com/games/*"],
       "js": ["src/content.js"],
       "css": ["src/content.css"]
     }

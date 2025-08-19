@@ -5,7 +5,7 @@ import { showSnackbar } from "./snackbar.js";
 
 export async function run() {
     const domGrid = document.getElementById("queens-grid");
-    const cells = domGrid.children;
+    const cells = domGrid.querySelectorAll(".queens-cell-with-border");
     if ([...domGrid.parentElement.classList].some(c => c.includes("disabled"))) {
         showSnackbar("Please start the game first!");
         return;
