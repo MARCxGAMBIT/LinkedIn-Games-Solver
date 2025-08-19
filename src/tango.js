@@ -3,7 +3,7 @@ import { click } from "./click.js";
 
 export async function run() {
     const board = document.querySelector(".lotka-board");
-    if (board.classList.contains("lotka-board--disabled")) {
+    if ([...board.classList].some(c => c.includes("disabled"))) {
         showSnackbar("Please start the game first!");
         return;
     }

@@ -1,10 +1,17 @@
+import { showSnackbar } from "./snackbar.js";
+
 export async function run() {
     const initialHints = await extractInitialHints();
     const wordLength = extractWordLength();
+
+    // generate prompt for AI to solve this
+    showSnackbar(`Solve the ${wordLength}-letter word: ${initialHints.join(", ")}`);
 }
 
+
+
 async function extractInitialHints() {
-    btn = document.querySelector(".crossclimb__crab-btn:not(:disabled)");
+    const btn = document.querySelector(".crossclimb__crab-btn:not(:disabled)");
     const hints = [];
     for (let i = 1; i < 6; ++i) {
         hints.push(document.querySelector("#crossclimb-clue-section-" + i).innerText);

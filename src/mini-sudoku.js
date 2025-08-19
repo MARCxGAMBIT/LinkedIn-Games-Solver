@@ -3,7 +3,7 @@ import { showSnackbar } from "./snackbar.js";
 
 export async function run() {
     const board = document.querySelector(".sudoku-board");
-    if (!board || board.classList.contains("sudoku-board--disabled")) {
+    if ([...board.classList].some(c => c.includes("disabled"))) {
         showSnackbar("Please start the game first!");
         return;
     }

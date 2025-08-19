@@ -3,9 +3,13 @@
   "name": "LinkedIn Games Solver",
   "version": "1.0",
   "description": "Extension to automatically solve LinkedIn games Queens and Tango",
+  "background": {
+    "service_worker": "background.js"
+  },
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "tabs"
   ],
   "host_permissions": [
     "https://*.linkedin.com/*"
