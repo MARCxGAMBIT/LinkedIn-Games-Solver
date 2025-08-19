@@ -16,7 +16,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://*.linkedin.com/games/*"],
+      "matches": ["https://*.linkedin.com/*"],
       "js": ["src/content.js"],
       "css": ["src/content.css"]
     }

@@ -11,7 +11,7 @@
                 // Small delay to ensure DOM is updated after navigation
                 setTimeout(() => {
                     init();
-                }, 500);
+                }, 100);
             }
         }
     );
@@ -30,6 +30,7 @@
 
     function detectGame() {
         const segments = location.pathname.split("/").filter(Boolean);
+        let game;
         if (segments[0] === "games") {
             game = segments[1];
         }
@@ -51,6 +52,8 @@
         if (existingButton) {
             existingButton.remove();
         }
+
+        debugger;
         
         const button = document.createElement("button");
         button.innerHTML = "Solve";
