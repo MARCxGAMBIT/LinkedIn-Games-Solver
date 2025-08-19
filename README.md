@@ -12,5 +12,7 @@ Stop wasting your time solving brain puzzles and start acting like a real doer:
 This extension is able to solve the following LinkedIn games for you
 * <a href="https://www.linkedin.com/games/tango/">Tango</a>
 * <a href="https://www.linkedin.com/games/queens/">Queens</a>
+* <a href="https://www.linkedin.com/games/zip/">Zip</a>
+* <a href="https://www.linkedin.com/games/mini-sudoku/">Mini Sudoku</a>
 
 Just start the game, press the golden "Solve" button above the grid and let the magic happen.
