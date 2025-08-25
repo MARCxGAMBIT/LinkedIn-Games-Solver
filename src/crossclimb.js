@@ -5,18 +5,22 @@ export async function run() {
     const wordLength = extractWordLength();
 
     // generate prompt for AI to solve this
-    showSnackbar(`Solve the ${wordLength}-letter word: ${initialHints.join(", ")}`);
+    showSnackbar(`Solve these ${wordLength}-letter words, which should form a neat word ladder: ${initialHints.join(";")}`);
 }
 
 
 
 async function extractInitialHints() {
+    const container = document.querySelector(".crossclimb__guess__container");
+    const guesses = container.querySelectorAll(".crossclimb__guess");
+
     const btn = document.querySelector(".crossclimb__crab-btn:not(:disabled)");
     const hints = [];
-    for (let i = 1; i < 6; ++i) {
+
+    for (let i = 1; i <= guesses.length; i++) {
         hints.push(document.querySelector("#crossclimb-clue-section-" + i).innerText);
         btn.click();
-        await new Promise(resolve => setTimeout(resolve, 0))
+        await new Promise(resolve => setTimeout(resolve, 0));
     }
     return hints;
 }

@@ -96,6 +96,9 @@ function canCellBePlaced(grid, row, col, constraints) {
     const colCells = grid.map(row => row[col].type ?? "x");
     const type = grid[row][col].type;
 
+    const maxOfTypePerRow = rowCells.length / 2;
+    const maxOfTypePerCol = colCells.length / 2;
+
     if (rowCells.join("").includes(type.repeat(3))) {
         return false;
     }
@@ -104,11 +107,11 @@ function canCellBePlaced(grid, row, col, constraints) {
         return false;
     }
 
-    if (rowCells.filter(cell => cell === type).length > 3) {
+    if (rowCells.filter(cell => cell === type).length > maxOfTypePerRow) {
         return false;
     }
 
-    if (colCells.filter(cell => cell === type).length > 3) {
+    if (colCells.filter(cell => cell === type).length > maxOfTypePerCol) {
         return false;
     }
 
