@@ -5,7 +5,7 @@ export async function run() {
     const wordLength = extractWordLength();
 
     // generate prompt for AI to solve this
-    showSnackbar(`Solve these ${wordLength}-letter words, which should form a neat word ladder: ${initialHints.join(";")}`);
+    showSnackbar(`Solve these ${wordLength}-letter words, which should form a neat word ladder: ${initialHints.join(";")}. There has to be a solution, no traps or red herrings. All hints (separated by semicolons) have to be used`);
 }
 
 
